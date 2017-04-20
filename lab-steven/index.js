@@ -2,6 +2,8 @@
 
 const textRead = require('./lib/text-read.js');
 
-textRead.textReader('textData01');
-textRead.textReader('textData02');
-textRead.textReader('textData03');
+
+let testcall = function(fileArr){
+  console.log(fileArr);
+};
+textRead.textReader('textData01', 'textData02', 'textData03', testcall);
