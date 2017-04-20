@@ -2,11 +2,13 @@
 
 const fs = require('fs');
 
-module.exports = exports = {};
+// module.exports = exports = {};
 
-// exports.fileReadDone = [];
 
-exports.textReader = function(filename1, filename2, filename3, callback) {
+
+// exports.readDone = [];
+
+module.exports.textReader = function(filename1, filename2, filename3, callback) {
   let fileReadDone = [];
   fs.readFile(`${__dirname}/../data/${filename1}.txt`, function(err, data){
     if(err) throw err;
@@ -25,10 +27,11 @@ exports.textReader = function(filename1, filename2, filename3, callback) {
         // console.log(data.toString('hex', 0, 8), filename);
         fileReadDone.push(data.toString('hex', 0, 8));
         // console.log(fileReadDone);
-        callback(fileReadDone);
+        // return callback(fileReadDone);
+        exports.readDone.push(file)
       });
     });
   });
 };
 
-exports.textReader('textData01', 'textData02', 'textData03', testcall);
+// exports.textReader('textData01', 'textData02', 'textData03', exports.testConsole);
